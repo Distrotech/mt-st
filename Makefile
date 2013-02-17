@@ -1,6 +1,6 @@
 CFLAGS=  -Wall -O2
-SBINDIR= /sbin
-BINDIR=  /bin
+SBINDIR= /usr/sbin
+BINDIR=  /usr/bin
 USRBINDIR= /usr/bin
 MANDIR= /usr/share/man
 
