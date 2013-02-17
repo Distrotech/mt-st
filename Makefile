@@ -15,14 +15,15 @@ stinit:	stinit.c
 	$(CC) $(CFLAGS) -o stinit stinit.c
 
 install: mt stinit
-	install -s mt $(MTDIR)
-	install -c -m 444 mt.1 $(MANDIR)/man1
-	(if [ -f $(MANDIR)/man1/mt.1.gz ] ; then \
-	  rm -f $(MANDIR)/man1/mt.1.gz; gzip $(MANDIR)/man1/mt.1; fi)
-	install -s stinit $(SBINDIR)
-	install -c -m 444 stinit.8 $(MANDIR)/man8
-	(if [ -f $(MANDIR)/man8/stinit.8.gz ] ; then \
-	  rm -f $(MANDIR)/man8/stinit.8.gz; gzip $(MANDIR)/man8/stinit.8; fi)
+	install -d $(DESTDIR)$(MTDIR) $(DESTDIR)$(MANDIR)/man1 $(DESTDIR)$(MANDIR)/man8
+	install -s mt $(DESTDIR)$(MTDIR)
+	install -c -m 444 mt.1 $(DESTDIR)$(MANDIR)/man1
+	(if [ -f $(DESTDIR)$(MANDIR)/man1/mt.1.gz ] ; then \
+	  rm -f $(DESTDIR)$(MANDIR)/man1/mt.1.gz; gzip $(DESTDIR)$(MANDIR)/man1/mt.1; fi)
+	install -s stinit $(DESTDIR)$(SBINDIR)
+	install -c -m 444 stinit.8 $(DESTDIR)$(MANDIR)/man8
+	(if [ -f $(DESTDIR)$(MANDIR)/man8/stinit.8.gz ] ; then \
+	  rm -f $(DESTDIR)$(MANDIR)/man8/stinit.8.gz; gzip $(DESTDIR)$(MANDIR)/man8/stinit.8; fi)
 
 dist:	clean
 	(mydir=`basename \`pwd\``;\
