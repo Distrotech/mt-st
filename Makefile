@@ -15,7 +15,7 @@ stinit:	stinit.c
 	$(CC) $(CFLAGS) -o stinit stinit.c
 
 install: mt stinit
-	install -d $(DESTDIR)$(MTDIR) $(DESTDIR)$(MANDIR)/man1 $(DESTDIR)$(MANDIR)/man8
+	install -d $(DESTDIR)$(SBINDIR) $(DESTDIR)$(MTDIR) $(DESTDIR)$(MANDIR)/man1 $(DESTDIR)$(MANDIR)/man8
 	install -s mt $(DESTDIR)$(MTDIR)
 	install -c -m 444 mt.1 $(DESTDIR)$(MANDIR)/man1
 	(if [ -f $(DESTDIR)$(MANDIR)/man1/mt.1.gz ] ; then \
