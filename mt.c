@@ -22,6 +22,7 @@
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/utsname.h>
+#include <sys/sysmacros.h>
 
 #include "mtio.h"
 
